@@ -75,8 +75,8 @@ void CLinkSegment::Load()
     
     path = std::string(&seg_data.buffer[8]);
     std::string::reverse_iterator first_non_space = 
-        std::find_if(path.rbegin(), path.rend(), 
-                     std::bind2nd(std::not_equal_to<char>(), ' '));
+    std::find_if(path.rbegin(), path.rend(), 
+                 [](char c) { return c != ' '; });
 
     *(--first_non_space) = '\0';
 
