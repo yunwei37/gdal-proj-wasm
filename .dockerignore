@@ -1,0 +1,7 @@
+gdal
+proj4
+examples
+autotest
+*.zip
+dist
+.git

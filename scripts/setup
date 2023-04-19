@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+DIR="$(dirname "$0")"
+
+# Pin to emsdk 3.1.21. Higher versions seem to switch to C++17 by default, which GDAL 2.4 isn't
+# compatible with.
+docker build -t gdaljs-build "${DIR}/.." \
+    --build-arg EMSCRIPTEN_V=3.1.21
