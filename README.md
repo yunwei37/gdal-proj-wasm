@@ -1,4 +1,39 @@
-GDAL JS
+# GDAL for wasm
+
+## compile and run
+
+1. install emscripten
+
+    see https://github.com/kripken/emscripten\
+
+    tested emscripten version:
+
+    > emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.25 
+    > (febd44b21ecaca86e2cb2a25ef3ed4a0a2076365)
+    > clang version 16.0.0 (https://github.com/llvm/llvm-project effd75bda4b1a9b26e554c1cda3e3b4c72fa0aa8)
+
+
+2. compile gdal and proj for multi-thread
+
+    ```sh
+    make
+    ```
+
+3. install gdal and proj headers
+
+    ```sh
+    cd gdal && make install
+    ```
+
+    The lib can befound:
+
+    - proj4/src/.libs/libproj.a
+    - gdal/libgdal.a
+
+This is a part of GPlates wasm project.
+
+## GDAL JS
+
 ==============
 An [Emscripten](https://github.com/kripken/emscripten) port of [GDAL](http://www.gdal.org) 2.4.
 
